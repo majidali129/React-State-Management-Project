@@ -1,0 +1,17 @@
+.main_header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #062929;
+    padding: 2.9em 2em;
+
+
+}
+
+.logo{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}

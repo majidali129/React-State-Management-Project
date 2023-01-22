@@ -4,6 +4,8 @@ import React , {useState , useEffect , useReducer } from 'react'
 import Card from '../UI/Card/Card'
 import classes from "./Login.module.css"
 import Button from "../UI/Button/Button"
+import { useContext } from 'react'
+import { AuthContextProvider } from '../../Context/Context'
 
 const EmailReducer = (currentState , actions )=>{
   if(actions.type === "userEmail"){
@@ -21,13 +23,16 @@ const PasswordReducer = (currentState , actions )=>{
 
 const Login = (props)=>{
 
+
   // const [firstName , setFirstName ] = useState("");
   // const [lastName , setLastName ] = useState("");
   // const [email , setEmail ] = useState("");
   // const [password , setPassword ] = useState("");
-  const [validEmail , setValidEmail] = useState()
-  const [validPassword , setValidPassword] = useState()
+  // const [validEmail , setValidEmail] = useState()
+  // const [validPassword , setValidPassword] = useState()
   const [formIsValid , setFormIsValid] = useState(false)
+
+  const AuthContext = useContext(AuthContextProvider);
 
   // const FirstNameChangeHandler = (event)=>{
   //   setFirstName(event.target.value)
@@ -74,12 +79,12 @@ const Login = (props)=>{
 
   }
 
-  const EmailValidityHandler = ()=>{
-    setValidEmail(userEmail.value.includes('@'));
-  }
-  const PasswordValidityHandler = ()=>{
-    setValidPassword(userPassword.value.trim().length > 4);
-  }
+  // const EmailValidityHandler = ()=>{
+  //   setValidEmail(userEmail.value.includes('@'));
+  // }
+  // const PasswordValidityHandler = ()=>{
+  //   setValidPassword(userPassword.value.trim().length > 4);
+  // }
   
   const LoginHandler = (event)=>{
     event.preventDefault()
@@ -120,7 +125,7 @@ const Login = (props)=>{
           type="text" 
           id='email' 
           onChange={EmailChangeHandler}
-          onBlur={EmailValidityHandler}
+          // onBlur={EmailValidityHandler}
           />
         </div>
 
@@ -131,7 +136,7 @@ const Login = (props)=>{
           type="text" 
           id='password' 
           onChange={PasswordChangeHandler} 
-          onBlur={PasswordValidityHandler}
+          // onBlur={PasswordValidityHandler}
           />
         </div>
 

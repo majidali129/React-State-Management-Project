@@ -1,0 +1,30 @@
+ ul{
+    display: flex;
+    align-items: center;
+    padding: 0.2em 1em;
+    gap: 30px;
+    align-self: flex-start;
+}
+ul>li{
+    list-style-type: none;
+    
+}
+li>a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    gap: 10px;
+}
+.home_btn{
+    background-color: #fff;
+    color: black;
+    font-size: 1.3rems;
+    border: none;
+    outline: none;
+    padding: 0.6em 1em ;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+}

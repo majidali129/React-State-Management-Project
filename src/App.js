@@ -1,19 +1,26 @@
-import React,{Fragment , useState} from 'react'
+import React,{ Fragment, useContext} from 'react'
 import Login from './components/Form/Login'
+import Home from './components/Home/Home'
+import MainHeader from './components/MainHeader/MainHeader'
+import  { AuthContextProvider } from './Context/Context'
 
 
 function App() {
-  // const [isValid , setIsValid] = useState(true)
   
-  const LoginDataHandler = ( email , password)=>{
-    console.log(email , password)
-    // setIsValid(true)
-  }
+
+  let authContex = useContext(AuthContextProvider)
+
+ 
 
   return (
     <Fragment>
-       < Login userData={LoginDataHandler}/>
-    </Fragment>
+      <MainHeader />
+      <main>
+      { authContex.isLoginValid && <Home />}
+
+       { !authContex.isLoginValid && < Login  /> } 
+      </main>
+      </Fragment>
   )
 }
 
