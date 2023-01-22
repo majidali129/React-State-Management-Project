@@ -1,17 +1,4 @@
-*,*::after,*::before{
-    margin: 0;padding: 0;box-sizing: border-box;
-}
-html{
-    font-size: 62.5%;
-    font-family: sans-serif ;
-}
-.login{
-    width: 50%;
-    margin: 2em auto;
-    padding: 2em 3em ;
-}
-/* 
-.login .control{
+.control{
     border-radius: 3px;
     margin: 1.2rem;
     display: flex;
@@ -29,23 +16,23 @@ html{
 }
 .control input{
     border: none;
+    /* font: inherit; */
     font-size: 1.5rem;
     padding:0.5em 0.5em;
     flex: 3;
     border-radius: inherit;
     border: 1px solid #ccc;
 }
-.login input:focus{
+.control input:focus{
     outline: none;
     border-color: #4f005f;
 }
-*/
 
 .btn_container{
     text-align: center;
 }
 
-/* .control.invalid input{
+.control.invalid input{
     border-color: red;
     background: #e2aaa6;
-}  */
+}

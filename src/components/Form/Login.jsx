@@ -5,7 +5,8 @@ import Card from '../UI/Card/Card'
 import classes from "./Login.module.css"
 import Button from "../UI/Button/Button"
 import { useContext } from 'react'
-import { AuthContextProvider } from '../../Context/Context'
+import AuthenticityContext from '../../Context/Context'
+import Input from '../UI/Input/Input'
 
 const EmailReducer = (currentState , actions )=>{
   if(actions.type === "userEmail"){
@@ -32,7 +33,7 @@ const Login = (props)=>{
   // const [validPassword , setValidPassword] = useState()
   const [formIsValid , setFormIsValid] = useState(false)
 
-  const AuthContext = useContext(AuthContextProvider);
+  const AuthContext = useContext(AuthenticityContext);
 
   // const FirstNameChangeHandler = (event)=>{
   //   setFirstName(event.target.value)
@@ -88,7 +89,7 @@ const Login = (props)=>{
   
   const LoginHandler = (event)=>{
     event.preventDefault()
-    props.userData(userEmail.value , userPassword.value)
+    AuthContext.onLogin(userEmail.value , userPassword.value)
     // console.log(firstName , lastName , email , password)
 
   }
@@ -117,28 +118,23 @@ const Login = (props)=>{
           onChange={LastNameChangeHandler} 
           />
         </div> */}
-
-        <div className={`${classes.control} ${userEmail.isValid === false ? classes.inValid : ""}`}>
-           <label htmlFor="email">Email :</label>      
-          <input 
+      
+          <Input 
+          label="Email"
+          isValid={userEmail.isValid}
           value={userEmail.value}
-          type="text" 
-          id='email' 
+          type="text"
+          id="email"
           onChange={EmailChangeHandler}
-          // onBlur={EmailValidityHandler}
           />
-        </div>
-
-        <div className={`${classes.control} ${userPassword.isValid === false ? classes.inValid : ""}`}>
-           <label htmlFor="password">Password :</label>      
-          <input 
+      
+          <Input 
+          label="Password"
+          isValid={userPassword.isValid}
           value={userPassword.value}
-          type="text" 
-          id='password' 
-          onChange={PasswordChangeHandler} 
-          // onBlur={PasswordValidityHandler}
-          />
-        </div>
+          type="text"
+          id="password"
+          onChange={PasswordChangeHandler}/>
 
         <div className={classes.btn_container}>
 

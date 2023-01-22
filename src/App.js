@@ -2,13 +2,13 @@ import React,{ Fragment, useContext} from 'react'
 import Login from './components/Form/Login'
 import Home from './components/Home/Home'
 import MainHeader from './components/MainHeader/MainHeader'
-import  { AuthContextProvider } from './Context/Context'
+import  AuthenticityContext from './Context/Context'
 
 
 function App() {
   
 
-  let authContex = useContext(AuthContextProvider)
+  const authContex = useContext(AuthenticityContext)
 
  
 

@@ -7,8 +7,8 @@ import { AuthContextProvider } from "./Context/Context";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AuthContextProvider.consumer>
+    <AuthContextProvider>
         <App/>
-    </AuthContextProvider.consumer>
+    </AuthContextProvider>
     
 )

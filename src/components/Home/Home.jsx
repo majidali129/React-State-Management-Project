@@ -3,10 +3,10 @@ import Card from "../UI/Card/Card"
 import classes from "./Home.module.css"
 import Button from '../UI/Button/Button'
 import { useContext } from 'react'
-import { AuthContextProvider } from '../../Context/Context'
+import AuthenticityContext from '../../Context/Context'
 
-const Home = (props) => {
-  const AuthContext = useContext(AuthContextProvider)
+const Home = () => {
+  const AuthContext = useContext(AuthenticityContext)
   return (
     <Card className = {classes.home}>
         <h2 className={classes.feedback_message}> Welcome Back!!!</h2>

@@ -3,10 +3,9 @@ import { useState } from "react";
 
 const AuthenticityContext = React.createContext();
 
-// export default AuthenticityContext
 
 export const AuthContextProvider = (props)=>{
-
+    
 
     const [isLoginValid , setIsLoginValid] = useState(false)
     
@@ -31,3 +30,5 @@ export const AuthContextProvider = (props)=>{
         </AuthenticityContext.Provider>
     )
 }
+
+    export default AuthenticityContext
